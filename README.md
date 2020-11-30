@@ -13,18 +13,26 @@ Important information about the processor:
 --DATA STRUCTURS--
 
 PROCESS:
+
 <ADT>
 <Attributes>
+    
 id - an integer denoting the PID of the process
+
 timeRequired - an integer denoting the time requirement of the job in milliseconds
+
 state - a String denoting the current state of the process [ready, running, (done, finished)]. Blocked processes were NOT implemented for this  simulation. 
 priority - An integer denoting the urgency of the process. Lower priorities are treated as more urgent. For this simulation, priorities range from [0, 10]
 
 PRIORITY QUEUE:
+
 <ADT>
 <Attributes>
+    
 size - an integer denoting the number of processes currently in the queue.
+
 maxSize - an integer denoting how many processes can be enqueued at once.
+
 processes - an Array of the <Process>'s currently awaiting execution.
     
 --FUNCTIONS--
