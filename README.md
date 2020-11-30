@@ -14,8 +14,8 @@ Important information about the processor:
 
 PROCESS:
 
-<ADT>
-<Attributes>
+>ADT>
+>Attributes>
     
 id - an integer denoting the PID of the process
 
@@ -26,8 +26,8 @@ priority - An integer denoting the urgency of the process. Lower priorities are 
 
 PRIORITY QUEUE:
 
-<ADT>
-<Attributes>
+>ADT>
+>Attributes>
     
 size - an integer denoting the number of processes currently in the queue.
 
