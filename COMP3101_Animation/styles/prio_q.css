@@ -1,0 +1,77 @@
+.process {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 24px;
+  background: #e45c66;
+  text-align: center;
+  color: #000;
+  border: solid 5px;
+  margin: 10px;
+}
+
+.ready{
+    border-color: #bbFFbb;
+}
+
+.blocked{
+    border-color: #000;
+}
+
+.running{
+    border-color: #eeee99;
+}
+
+.done{
+    border-color: #33FF33;
+}
+
+.finished{
+    visibility: none;
+    z-index: -1;
+    width: 0px;
+    height: 0px;
+    border: 0px;
+    border-color: #000;
+}
+
+.finished p{
+    font-size: 0px;
+}
+
+.tooltip{
+    position: relative;
+    visibility: hidden;
+    opacity: 60%;
+    width: 400px;
+    
+    display: inline-block;
+    padding: 0px;
+    background-color: black;
+    color: #999;
+    text-align: center;
+    border-radius: 6px;
+    border: solid 1px;
+    border-color: #999;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.tooltip p{
+    margin: -40px;
+}
+
+.process:hover .tooltip{
+    visibility: visible;
+}
+
+#add-process{
+    
+    margin = 40px;
+}
+
+#dequeue{
+    
+    margin = 40px;
+}
