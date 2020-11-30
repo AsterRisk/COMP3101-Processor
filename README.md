@@ -6,9 +6,9 @@ Important information about the processor:
 > This simulation was built using HTML, CSS and JavaScript. No Additional tools were used. Where used, external resources have been cited. 
 
 > State of processes is denoted by the border on the process circle. 
->	Faded Green - Ready
->	Yellow - Running
->	Bright Green - Completed Execution
+>	Faded Green - Ready |
+>	Yellow - Running |
+>	Bright Green - Completed Execution |
 
 --DATA STRUCTURS--
 
@@ -21,7 +21,7 @@ id - an integer denoting the PID of the process
 
 timeRequired - an integer denoting the time requirement of the job in milliseconds
 
-state - a String denoting the current state of the process [ready, running, (done, finished)]. Blocked processes were NOT implemented for this  simulation. 
+state - a String denoting the current state of the process [ready, running, (done, finished)].  (Done, Finished) both come together to represent the standard "completed" state. They are separated solely for the purpose of visualisation. Blocked processes were NOT implemented for this  simulation. 
 priority - An integer denoting the urgency of the process. Lower priorities are treated as more urgent. For this simulation, priorities range from [0, 10]
 
 PRIORITY QUEUE:
