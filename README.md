@@ -1,11 +1,14 @@
 Important information about the processor:
->Multiprocessor - The processor can process several processes at once. 
->No more than 10 processes can be in the waiting queue at any one time. 
->This simulation was built using HTML, CSS and JavaScript. No Additional tools were used. Where used, external resources have been cited. 
->State of processes is denoted by the border on the process circle. 
-	Faded Green - Ready
-	Yellow - Running
-	Bright Green - Completed Execution
+> Multiprocessor - The processor can process several processes at once. 
+
+> No more than 10 processes can be in the waiting queue at any one time. 
+
+> This simulation was built using HTML, CSS and JavaScript. No Additional tools were used. Where used, external resources have been cited. 
+
+> State of processes is denoted by the border on the process circle. 
+>	Faded Green - Ready
+>	Yellow - Running
+>	Bright Green - Completed Execution
 
 --DATA STRUCTURS--
 
