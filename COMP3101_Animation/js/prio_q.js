@@ -111,13 +111,13 @@ class Process
         console.log("time: " + timeRequired);
         this.id = id;
         this.priority = priority;
-        this.timeRequired = Math.floor(timeRequired*7000);
+        this.timeRequired = Math.floor(timeRequired*1000);
         this.state = "ready";
     }
     
     tooltip()
     {
-        return "<span class = 'tooltip'><pre>ID: "+this.id + "<br>Priority: "+this.priority+"<br>State: "+this.state+"<br>Time: " + this.timeRequired+"</pre></span>";
+        return "<span class = 'tooltip'><pre>ID: "+this.id + "<br>Priority: "+this.priority+"<br>State: "+this.state+"<br>Time (ms): " + this.timeRequired+"</pre></span>";
     }
     
     html()
@@ -140,14 +140,6 @@ class Process
         rep.classList.remove(buffer);
         rep.classList.add(newState);
         rep.innerHTML = this.tooltip();
-        if(newState == "running")
-        {
-            setTimeout(()=> {this.changeState("done");}, this.timeRequired);
-        }
-        if(newState == "done")
-        {
-            setTimeout(()=> {this.changeState("finished");}, 500);
-        }
     }
 }
 
@@ -228,6 +220,14 @@ class PriorityQueue
     
 }
 
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 
 function shiftUp(entity)
 {
@@ -243,9 +243,26 @@ function pass()
 
 function run(process)
 {
-    console.log("Running Process: " + process.id)
-    process.changeState("running");
+    //console.log(process);
     
+    process.changeState("running");
+}
+
+function runProcesses(prio_q)
+{
+    console.log(prio_q);
+    for (x=0;x<prio_q.size;x++)
+    {
+        //prio_q.processes[x]
+        console.log("Running Process: " + prio_q.processes[x].id + "\nPriority: " + prio_q.processes[x]);
+        alert("Running Process: " + prio_q.processes[x].id + "\nPriority: " + prio_q.processes[x]);
+        prio_q.processes[x].changeState("running");
+        sleep(prio_q.processes[x].timeRequired); //run the process for its designated time
+        prio_q.processes[x].changeState("done");
+        prio_q.processes[x].changeState("finished");
+        alert("Completed Process: " + prio_q.processes[x].id + "\nPriority: " + prio_q.processes[x]);
+        alert("Completed Process: " + prio_q.processes[x].id + "\nPriority: " + prio_q.processes[x]);
+    }
 }
 
 /*function runProcess()
@@ -296,7 +313,7 @@ window.onload = function(){
     btn.addEventListener("click", function(event)
     {
         
-        newProcess = new Process(id, Math.floor(Math.random()*10), Math.random());
+        newProcess = new Process(id, prompt("Enter the priority of the process: "), prompt("Enter the time for the process in seconds: "));
         canvas.innerHTML += newProcess.html();
         numProcesses += 1;
          //increment ID to be the ID of the next process to be created 
@@ -341,15 +358,7 @@ window.onload = function(){
     });
     subBtn.addEventListener("click", function()
     {
-        
-        let delay = prio_q.processes[0].timeRequired+200;
-        setInterval(function(){
-            if(prio_q.size > 0)
-            {
-                prio_q.dequeue();
-                delay = prio_q.processes[0].timeRequired+200;
-            }
-        }, delay);    
+        runProcesses(prio_q);
     });
     
 }
